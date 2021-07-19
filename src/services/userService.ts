@@ -89,7 +89,14 @@ export default class UserServices {
 
   static async searchUsers(searchText: any) {
     try {
-      return await User.find(searchText);
+      return await User.find(searchText).populate({
+        path: 'questions',
+        select: {
+          title: 1,
+          question: 1,
+          feedback: 1
+        }
+      });
     } catch (error) {
       return error;
     }

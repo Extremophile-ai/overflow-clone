@@ -24,10 +24,9 @@ export default class QuestionController {
       }
       const questionDetails = {
         title,
-        userId: _id,
+        owner: _id,
         question,
       };
-      // console.log(questionDetails)
       const askQuestion = await askNewQuestion(questionDetails);
       await newQuestion(_id, askQuestion.id);
       return res.status(200).json({
@@ -48,7 +47,6 @@ export default class QuestionController {
       const { _id } = req['decoded'].user;
       const { responseType, answer } = req.body;
       const retrieveQuestion = await findQuestionById(questionId);
-      console.log(retrieveQuestion.feedback);
       if (retrieveQuestion) {
         if (responseType === 'answer') {
           // add answer
@@ -57,7 +55,6 @@ export default class QuestionController {
             userId: _id,
           };
           const submitAnswer = await replyQuestion(questionId, responseData);
-          console.log('submitReply =>', submitAnswer);
           if (submitAnswer) {
             return res.status(200).json({
               success: true,
@@ -167,7 +164,7 @@ export default class QuestionController {
             feedback: questionFeedback,
           };
           const addVote = await addNewResponse(questionId, update);
-          if (vote) {
+          if (addVote) {
             return res.status(200).json({
               success: true,
               message: 'You have successfully voted against this answer.',
@@ -176,7 +173,6 @@ export default class QuestionController {
         }
       }
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         error: true,
         message: 'server error.',
@@ -195,7 +191,7 @@ export default class QuestionController {
 
       if (responseType === 'answer') {
       // accept answer as best
-        if (retrieveQuestion.userId.toString() === _id) {
+        if (retrieveQuestion.owner._id == _id) {
           questionFeedback[feedbackPosition].acceptAnswer = true;
           const update = {
             feedback: questionFeedback,
@@ -215,7 +211,6 @@ export default class QuestionController {
         }
       }
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         error: true,
         message: 'server error.',
@@ -245,7 +240,6 @@ export default class QuestionController {
         });
       }
     } catch (error) {
-      console.log(error);
       return res.status(500).json({
         error: true,
         message: 'server error.',

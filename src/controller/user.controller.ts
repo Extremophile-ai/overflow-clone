@@ -66,14 +66,13 @@ export default class UserController {
         });
       }
     } catch (error) {
-        console.log(error)
       return res.status(500).json({
         error: true,
-        message: "server error",
+        message: 'server error',
       });
     }
   }
-    
+
   static async login(req: Request, res: Response) {
     const { email, password } = req.body;
     try {
@@ -113,5 +112,4 @@ export default class UserController {
       });
     }
   }
-
 }

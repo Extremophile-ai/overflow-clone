@@ -28,6 +28,11 @@
         "prefer-destructuring": "off",
         "prefer-const": "off",
         "max-len": "off",
-        "array-callback-return":"off"
+        "array-callback-return":"off",
+        "no-restricted-syntax": "off",
+        "no-useless-catch": "off",
+        "guard-for-in":"off",
+        "import/no-extraneous-dependencies": "off",
+        "no-undef":"off"
     }
 }

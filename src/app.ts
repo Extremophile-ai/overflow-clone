@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import connection from './config/database';
+import { connection } from './config/database';
 import routes from './routes/routes';
 
 const app = express();
@@ -25,3 +25,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`⚡️[server]: server is listening on port: ${port}`);
 });
+
+export default app;

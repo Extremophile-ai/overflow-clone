@@ -46,7 +46,6 @@ export default class QuestionService {
     const newResponse = await Question.findOneAndUpdate(filter, update, {
       new: true
     });
-    console.log(newResponse);
     return newResponse;
   }
 
@@ -60,7 +59,7 @@ export default class QuestionService {
         }
       });
     } catch (error) {
-      console.log('error =>', error);
+      return error;
     }
   }
 }

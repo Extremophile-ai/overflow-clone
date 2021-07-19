@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const connection = async () => {
   try {
@@ -28,4 +31,14 @@ const connection = async () => {
   }
 };
 
-export default connection;
+const dropDB = async () => {
+  try {
+    for (const collection in mongoose.connection.collections) {
+      mongoose.connection.collections[collection].drop(() => {});
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export { connection, dropDB };
