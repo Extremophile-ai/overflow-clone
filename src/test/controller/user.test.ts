@@ -5,9 +5,7 @@ import {
   user1,
   user1a,
   user1b,
-  user2,
   user1Login,
-  user2Login
 } from './user.data';
 
 chai.should();

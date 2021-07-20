@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { connection } from './config/database';
+import connection from './config/database';
 import routes from './routes/routes';
 
 const app = express();
@@ -19,7 +19,7 @@ connection();
 app.use('/app', routes);
 
 app.get('/', (req, res) => {
-  res.send('The sedulous hyena ate the antelope!');
+  res.send('Welcome');
 });
 
 app.listen(port, () => {

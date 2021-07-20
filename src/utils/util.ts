@@ -58,7 +58,6 @@ export default class Util {
   }
 
   static async standardizeUserSearchResults(results: any[]) {
-    console.log(results[0].question);
     let searchResult = [];
     results.map((result: any) => {
       const resultData = {

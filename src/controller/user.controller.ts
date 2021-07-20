@@ -5,13 +5,8 @@ import { signupValidation, loginValidation } from '../validation/userValidation'
 import jwtHelper from '../utils/jwt';
 
 const {
-  getUsers,
   createUser,
   findUser,
-  verifyUser,
-  findById,
-  updateUser,
-  deleteUser,
   checkUsername,
 } = UserServices;
 
