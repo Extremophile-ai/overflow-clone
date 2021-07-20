@@ -243,7 +243,7 @@ describe('Handle Acceptance of An Answer as Most Accurate Functionalities', () =
   it('it should not let unauthenticated users to mark answers as accepted', (done) => {
     chai
       .request(server)
-      .post(
+      .patch(
         '/app/user/select-answer/60f07dfd1e6dd2a968a7a01c/60f0be819d217f5b5863e6e9'
       )
       .send({
@@ -260,7 +260,7 @@ describe('Handle Acceptance of An Answer as Most Accurate Functionalities', () =
   it('should not let users accept an answer to questions they do not own', (done) => {
     chai
       .request(server)
-      .post(
+      .patch(
         '/app/user/select-answer/60f07dfd1e6dd2a968a7a01c/60f0be819d217f5b5863e6e9'
       )
       .set('Authorization', `Bearer ${userToken}`)
@@ -280,7 +280,7 @@ describe('Handle Acceptance of An Answer as Most Accurate Functionalities', () =
   it('should let a logged in user to accept answers to questions they own', (done) => {
     chai
       .request(server)
-      .post(
+      .patch(
         '/app/user/select-answer/60f07dfd1e6dd2a968a7a01c/60f0be819d217f5b5863e6e9'
       )
       .set('Authorization', `Bearer ${userToken4}`)
