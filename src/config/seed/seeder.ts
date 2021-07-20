@@ -21,8 +21,8 @@ const data = [
 seeder.connect(process.env.TEST_MONGO_URI, options, () => {
   // load models
   seeder.loadModels([
-    './src/model/user.ts',
-    './src/model/questions.ts'
+    './dist/model/user.js',
+    './dist/model/questions.js'
   ]);
 
   //   clear database
