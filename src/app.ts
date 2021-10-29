@@ -19,7 +19,7 @@ connection();
 app.use('/app', routes);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to stack overflow');
+  res.send('Welcome to the new stack overflow');
 });
 
 app.listen(port, () => {
