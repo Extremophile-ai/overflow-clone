@@ -54,7 +54,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
   Continuous_Deployment:
-    needs: [Build_And_Test]
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
