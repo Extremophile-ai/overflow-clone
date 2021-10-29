@@ -55,7 +55,8 @@ jobs:
 
   Continuous_Deployment:
     needs: [Build_And_Test]
-    
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2 
       - name: Deploy to EC2 instance
