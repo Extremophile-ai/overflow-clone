@@ -73,6 +73,7 @@ jobs:
             #cd Klluster-assessment &&
             git branch -a &&
             git pull origin main &&
+            npm install pm2 -g &&
             cd src &&
             tail app.ts
             npm i &&
