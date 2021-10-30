@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project ./",
     "start": "export NODE_ENV=production && tsc && node dist/app.js",
-    "dev": "NODE_ENV=development nodemon --watch './**/*.ts' --exec 'ts-node' src/app.ts",
+    "dev": "export NODE_ENV=development && npm run build && pm2 start dist/app.js",
     "test": "export NODE_ENV=test && npm run build && npm run seeder && nyc --require --reporter=html --reporter=text mocha -r 'ts-node' ./dist/test/index.js --timeout 50000 --recursive --exit || true",
     "coverage": "nyc npm run test && nyc report --reporter=text-lcov --reporter=lcov | node ./node_modules/coveralls/bin/coveralls.js --verbose",
     "seeder": "ts-node ./dist/config/seed/seeder.js"
