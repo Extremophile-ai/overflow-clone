@@ -19,12 +19,11 @@ connection();
 app.use('/app', routes);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the new and Improved stack overflow (version III)');
+  res.send('Welcome to the new and very Improved stack overflow (version IV)');
 });
 
 app.listen(port, () => {
   console.log(`⚡️[server]: server is listening on port: ${port}`);
-  console.log('Welcome to the new and Improved stack overflow (version III)');
 });
 
 export default app;
