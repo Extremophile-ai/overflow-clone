@@ -70,7 +70,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
 
           # deploy latest code
-            cd /home/ubuntu/Klluster-assessment &&
+            ls &&
+            cd Klluster-assessment &&
             git pull origin main &&
             npm i &&
             npm run dev
