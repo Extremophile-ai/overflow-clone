@@ -71,7 +71,7 @@ jobs:
 
           # deploy latest code
             ls &&
-            cd Klluster-assessment &&
+            #cd Klluster-assessment &&
             git pull origin main &&
             npm i &&
             npm run dev
