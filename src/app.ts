@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`⚡️[server]: server is listening on port: ${port}`);
+  console.log('Welcome to the new and Improved stack overflow (version III)');
 });
 
 export default app;
