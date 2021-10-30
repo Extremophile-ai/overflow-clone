@@ -70,9 +70,10 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
 
           # deploy latest code
-            ls &&
             #cd Klluster-assessment &&
             git branch -a &&
             git pull origin main &&
+            cd src &&
+            tail app.ts
             npm i &&
             npm run dev
