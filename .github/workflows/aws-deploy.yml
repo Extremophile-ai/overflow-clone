@@ -25,7 +25,7 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-            –application-name SO_Test_APP \
-            –deployment-group-name SO_Test_Deployment \
-            –deployment-config-name CodeDeployDefault.OneAtATime \
-            –github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+            --application-name SO_Test_APP \
+            --deployment-group-name SO_Test_Deployment \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
