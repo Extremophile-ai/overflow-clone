@@ -52,4 +52,3 @@ jobs:
           COVERALLS_GIT_BRANCH: ${{ github.ref }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-

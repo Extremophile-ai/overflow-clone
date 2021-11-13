@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #give permission for everything in the express-app directory
-sudo chmod -R 777 /home/ec2-user/klusster-assessment
+sudo chmod -R 777 /home/ec2-user/Klusster-assessment
 
 #navigate into our working directory where we have all our github files
-cd /home/ec2-user/klusster-assessment
+cd /home/ec2-user/Klusster-assessment
 
 #add npm and node to path
 export NVM_DIR="$HOME/.nvm"	
@@ -15,7 +15,6 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 #start our node app in the background
-pm2 kill
 npm run dev
 
 #node dist/app.js > dist/app.out.log 2> dist/app.err.log < /dev/null & 
